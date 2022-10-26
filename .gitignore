@@ -1,3 +1,4 @@
 .vault
 site.retry
 tags*
+.vagrant/*
