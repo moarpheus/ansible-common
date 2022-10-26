@@ -1,0 +1,4 @@
+- name: account user
+  user:
+    name: account_user
+    password: password
