@@ -2,3 +2,11 @@
   user:
     name: account_user
     password: password
+
+
+- name: account file /home/account_user/.ssh
+  file:
+    path: "/home/account_user/.ssh"
+    state: directory
+    owner: "account_user"
+    mode: 0700
