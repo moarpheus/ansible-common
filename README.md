@@ -10,3 +10,8 @@ Intstalls following epel repo and following tools:
 * ncdu
 * htop
 * crontabs
+
+
+Use following command on any linux machine to encrypt your *password*.
+
+    perl -e 'print crypt("password","\$6\$saltsalt\$") . "\n"'
