@@ -1,0 +1,32 @@
+- name: account user
+  user:
+    name: item.name
+    password: item.password
+  with_items: account_users
+
+- name: account file /home/XXX/.ssh
+  file:
+    path: "/home/{{ item.name }}/.ssh"
+    state: directory
+    owner: "{{ item.name }}"
+    mode: 0700
+  with_items: "{{ account_users }}"
+
+- name: account copy /home/XXX/.ssh/authorized_keys
+  copy:
+    content: "{{ item.key }}"
+    dest: "/home/{{ item.name }}/.ssh/authorized_keys"
+    owner: "{{ item.name }}"
+    mode: 0600
+  with_items: "{{ account_users }}"
+
+- name: account file /etc/sudoers.d
+  file:
+    path: /etc/sudoers.d
+    mode: 0755
+
+- name: account template /etc/sudoers.d/accounts_users
+  template:
+    src: templates/account_users.j2
+    dest: /etc/sudoers.d/account_users
+    mode: 0440
