@@ -10,5 +10,9 @@
     name:
       - curl
       - nss
+      - git
+      - ncdu
+      - htop
+      - crontabs
     enablerepo: "*"
     state: latest
