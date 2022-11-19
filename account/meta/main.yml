@@ -1,0 +1,8 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: moarpheus
+  description: Common tools for Centos 8
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.0
